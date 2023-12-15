@@ -46,13 +46,10 @@ y = np.array(y)
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(metric='manhattan', n_neighbors=2, weights='distance',n_jobs=-1)
 
-#X_train, y_train으로 모델 훈련  
-knn.fit(X_train, y_train)
 
-#X_test를 사용하여 예측  
+knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
 
-#정확도 계산 및 출력  
 print('Accuracy:', sklearn.metrics.accuracy_score(y_test, y_pred))
 ```
 
