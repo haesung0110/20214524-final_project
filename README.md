@@ -50,7 +50,6 @@ knn = KNeighborsClassifier(metric='manhattan', n_neighbors=2, weights='distance'
 knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
 
-print('Accuracy:', sklearn.metrics.accuracy_score(y_test, y_pred))
 ```
 
 * 알고리즘: knn알고리즘을 사용하여 모델을 훈련하고 예측하였다.
@@ -58,7 +57,10 @@ print('Accuracy:', sklearn.metrics.accuracy_score(y_test, y_pred))
 
 ## 4) 정확도 결과:
 y_test 데이터로 예측한 결과의 정확도는 다음과 같다.  
-Accuracy: 0.9012775842044135 
+```py
+print('Accuracy: %.2f' % sklearn.metrics.accuracy_score(y_test, y_pred))
+```
+Accuracy: 0.90
   
 
 
