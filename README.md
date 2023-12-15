@@ -55,6 +55,25 @@ y_pred = knn.predict(X_test)
 * 알고리즘: knn알고리즘을 사용하여 모델을 훈련하고 예측하였다.
 * 하이퍼파라미터: 거리 측정 방법으로 'manhatten', 이웃수는 2, 거리에 대한 가중치는 'distance' (거리의 역수)를 사용하였다.
 
+## 3-1) 이웃수 결정:
+```py
+from sklearn.model_selection import cross_val_score
+
+# 이웃의 개수가 2일 때
+knn_2 = KNeighborsClassifier(metric='manhattan', n_neighbors=2, weights='distance',n_jobs=-1)
+scores_2 = cross_val_score(knn_2, X_train, y_train, cv=5)
+print("Accuracy (k=2):", scores_2.mean())
+
+# 이웃의 개수가 3일 때
+knn_3 = KNeighborsClassifier(metric='manhattan', n_neighbors=3, weights='distance',n_jobs=-1)
+scores_3 = cross_val_score(knn_3, X_train, y_train, cv=5)
+print("Accuracy (k=3):", scores_3.mean())
+
+```
+- 이웃 수 2 일때 정확도:0.8780499001253086  
+- 이웃 수 3 일때 정확도: 0.8367389982754556  
+- 따라서 이웃 수 2로 결정하였다.
+  
 ## 4) 정확도 결과:
 y_test 데이터로 예측한 결과의 정확도는 다음과 같다.  
 ```py
