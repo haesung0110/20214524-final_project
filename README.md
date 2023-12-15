@@ -35,7 +35,7 @@ y = np.array(y)
 3. images배열을 numpy 배열로 변환한다.  
 4. X,y에 각각 image 사이즈를 변환한 images, numpy배열로 변환한 y배열을 할당한다.  
 
-- 데이터 예시1 (glioma_tumor)
+- 데이터 예시1 (glioma_tumor)  
 ![gg (1)](https://github.com/haesung0110/20214524-final_project/assets/147023827/3efe9be3-542a-48d5-8d45-4c337cd23e59)
 
 
